@@ -9,3 +9,6 @@ import torch
 class KVCacheState:
     keys: torch.Tensor
     values: torch.Tensor
+
+    def num_bytes(self) -> int:
+        return self.keys.numel() * self.keys.element_size() + self.values.numel() * self.values.element_size()

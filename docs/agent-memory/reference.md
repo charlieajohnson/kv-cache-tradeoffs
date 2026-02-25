@@ -10,6 +10,7 @@
 - Source-of-truth experiments: `configs/` only.
 - Raw results kept separate from processed outputs.
 - Every figure must have a paired config and generation command.
+- Current benchmark path is synthetic by default (torch.randint input) with real KV cache behavior.
 
 ## Contact points
 

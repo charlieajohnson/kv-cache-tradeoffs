@@ -14,3 +14,5 @@
 - Reproducibility by default: seeded RNG, logged hyperparameters, explicit config paths.
 - No silent CLI defaults that alter experiment semantics.
 - Artifacts are versioned if produced for figures or claims.
+- CLI JSON output should include runtime metadata (`python`, `torch`, `cuda`, `gpu`) for comparability.
+- Benchmark quality claims should be explicitly marked synthetic unless trained checkpoints are used.

@@ -1,5 +1,8 @@
 [build-system]
-requires = ["setuptools>=61", "wheel"]
+requires = [
+  "setuptools>=61",
+  "wheel",
+]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -22,11 +25,23 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["ruff", "black", "mypy", "pytest", "pytest-cov"]
+dev = [
+  "ruff",
+  "black",
+  "mypy",
+  "pytest",
+  "pytest-cov",
+]
 
 [tool.pytest.ini_options]
-addopts = ["-q", "--disable-warnings", "--strict-markers"]
-testpaths = ["tests"]
+addopts = [
+  "-q",
+  "--disable-warnings",
+  "--strict-markers",
+]
+testpaths = [
+  "tests",
+]
 
 [tool.ruff]
 line-length = 100

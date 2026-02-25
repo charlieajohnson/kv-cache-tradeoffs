@@ -17,8 +17,8 @@ Reproducible benchmark suite for studying **KV cache memory**, **throughput**, a
 
 The project follows the design in:
 
-- `/Users/charlie/Library/Mobile Documents/com~apple~CloudDocs/Charlie/05_MiniProject/RST/kv-cache-tradeoffs.md`
-- `/Users/charlie/Library/Mobile Documents/com~apple~CloudDocs/Charlie/05_MiniProject/RST/Memory — GitHub Repo.md`
+- `docs/agent-memory/reference.md`
+- `docs/agent-memory/guidelines.md`
 
 ## Repo conventions
 
@@ -49,9 +49,17 @@ make bench-smoke
 ```bash
 python -m kvbench.cli bench-kv-scaling --config configs/bench/kv_scaling.yaml
 python -m kvbench.cli bench-throughput --config configs/bench/throughput.yaml
+python -m kvbench.cli bench-latency --config configs/bench/latency.yaml
 python -m kvbench.cli bench-sweep --config configs/bench/compression_sweep.yaml
 python -m kvbench.cli plot kv --config configs/runs/paper_defaults.yaml
 ```
+
+## Experiment status
+
+- Benchmarks are currently synthetic-system measurements (`torch.randint` inputs) with real
+  incremental KV cache behavior (prefill + stepwise decode).
+- Quality experiments are a Phase 2 placeholder; perplexity deltas are currently synthetic.
+- KV bytes and timing are reported from actual cache tensors and CUDA timings where available.
 
 ## Data and environment
 
@@ -66,9 +74,9 @@ Set:
 
 See:
 
-- `/Users/charlie/Documents/GitHub/kv-cache-tradeoffs/docs/agent-memory/project-status.md`
-- `/Users/charlie/Documents/GitHub/kv-cache-tradeoffs/docs/agent-memory/feature-queue.md`
-- `/Users/charlie/Documents/GitHub/kv-cache-tradeoffs/docs/agent-memory/guidelines.md`
+- `docs/agent-memory/project-status.md`
+- `docs/agent-memory/feature-queue.md`
+- `docs/agent-memory/guidelines.md`
 
 ## Citation
 

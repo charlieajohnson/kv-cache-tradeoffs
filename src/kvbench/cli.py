@@ -13,6 +13,7 @@ from kvbench.bench import (
 )
 from kvbench.config import ExperimentConfig
 from kvbench.logging import setup_logger
+from kvbench.utils import runtime_report
 from kvbench.plotting import (
     fig_compression_threshold,
     fig_kv_memory,
@@ -30,7 +31,8 @@ def _load(name: str) -> ExperimentConfig:
 def _bench_kv_scaling(config: str):
     cfg = _load(config).data
     results = [r.__dict__ for r in run_kv_scaling(cfg)]
-    print(json.dumps(results, indent=2))
+    artifact = {"results": results, "runtime": runtime_report(), "mode": "synthetic"}
+    print(json.dumps(artifact, indent=2))
 
 
 @app.command()
@@ -41,7 +43,8 @@ def bench_kv_scaling(config: str = typer.Option(..., "--config")):
 def _bench_throughput(config: str):
     cfg = _load(config).data
     results = [r.__dict__ for r in run_throughput(cfg)]
-    print(json.dumps(results, indent=2))
+    artifact = {"results": results, "runtime": runtime_report(), "mode": "synthetic"}
+    print(json.dumps(artifact, indent=2))
 
 
 @app.command()
@@ -52,12 +55,25 @@ def bench_throughput(config: str = typer.Option(..., "--config")):
 def _bench_sweep(config: str):
     cfg = _load(config).data
     results = [r.__dict__ for r in run_compression_sweep(cfg)]
-    print(json.dumps(results, indent=2))
+    artifact = {"results": results, "runtime": runtime_report(), "mode": "synthetic"}
+    print(json.dumps(artifact, indent=2))
 
 
 @app.command()
 def bench_sweep(config: str = typer.Option(..., "--config")):
     _bench_sweep(config)
+
+
+def _bench_latency(config: str):
+    cfg = _load(config).data
+    result = run_latency_breakdown(cfg).__dict__
+    artifact = {"result": result, "runtime": runtime_report(), "mode": "synthetic"}
+    print(json.dumps(artifact, indent=2))
+
+
+@app.command()
+def bench_latency(config: str = typer.Option(..., "--config")):
+    _bench_latency(config)
 
 
 @app.command()

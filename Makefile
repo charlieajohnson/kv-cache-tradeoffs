@@ -7,7 +7,7 @@ install:
 	$(PYTHON) -m pip install -r requirements.txt
 
 lint:
-	$(PYTHON) -m ruff check src tests
+	$(PYTHON) -m ruff check --fix src tests
 
 format:
 	$(PYTHON) -m ruff format src tests

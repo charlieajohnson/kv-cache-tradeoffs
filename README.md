@@ -1,5 +1,7 @@
 # kv-cache-tradeoffs
 
+Thesis: Attention head multiplicity introduces predictable linear KV memory growth, and structured compression (GQA/MQA) induces measurable, non-linear degradation regimes that can be empirically characterized in sub-100M models.
+
 Reproducible benchmark suite for studying **KV cache memory**, **throughput**, and **quality** trade-offs in decoder-only transformer inference across MHA, GQA, and MQA in sub-100M parameter regimes.
 
 ## Objectives

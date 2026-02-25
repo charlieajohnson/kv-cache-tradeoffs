@@ -1,0 +1,6 @@
+compression_factors:
+  - 1
+  - 2
+  - 4
+  - 8
+output_dir: results/figures

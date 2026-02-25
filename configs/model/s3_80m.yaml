@@ -1,0 +1,6 @@
+model:
+  name: s3_80m
+  layers: 12
+  d_model: 768
+  heads: 12
+  params_m: 80

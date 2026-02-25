@@ -1,0 +1,12 @@
+attention_variants:
+  - mha
+  - gqa
+  - mqa
+seq_lens:
+  - 128
+  - 256
+  - 512
+  - 1024
+  - 2048
+  - 4096
+output_dir: results/figures

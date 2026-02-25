@@ -1,0 +1,6 @@
+model:
+  name: s1_5m
+  layers: 6
+  d_model: 384
+  heads: 6
+  params_m: 5

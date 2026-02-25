@@ -1,0 +1,7 @@
+run:
+  name: quick_smoke
+  bench: throughput
+  config: configs/bench/throughput.yaml
+seed: 7
+batch_size: 2
+max_batches: 1

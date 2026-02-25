@@ -1,0 +1,7 @@
+run:
+  name: paper_defaults
+  bench: kv_scaling
+  config: configs/bench/kv_scaling.yaml
+seed: 123
+batch_size: 4
+max_batches: 10

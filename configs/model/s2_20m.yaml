@@ -1,0 +1,6 @@
+model:
+  name: s2_20m
+  layers: 8
+  d_model: 512
+  heads: 8
+  params_m: 20

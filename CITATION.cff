@@ -1,0 +1,13 @@
+---
+cff-version: 1.2.0
+title: "Memory-Throughput Tradeoffs in Transformer Inference: KV Cache Scaling for MHA/GQA/MQA"
+message: "If you use this benchmark suite, cite this repository."
+type: software
+authors:
+  - family-names: "Charlie"
+    given-names: "CMD"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "Independent"
+repository-code: "https://github.com/your-org/kv-cache-tradeoffs"
+license: "MIT"
+date-released: "2026-02-25"

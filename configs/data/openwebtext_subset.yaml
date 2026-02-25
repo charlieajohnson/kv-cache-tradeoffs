@@ -1,0 +1,3 @@
+dataset:
+  name: openwebtext_subset
+  size: 1024

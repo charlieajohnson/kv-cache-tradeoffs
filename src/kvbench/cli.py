@@ -12,13 +12,13 @@ from kvbench.bench import (
     run_throughput,
 )
 from kvbench.config import ExperimentConfig
+from kvbench.logging import setup_logger
 from kvbench.plotting import (
     fig_compression_threshold,
     fig_kv_memory,
     fig_latency_breakdown,
     fig_throughput,
 )
-from kvbench.logging import setup_logger
 
 app = typer.Typer()
 
@@ -38,16 +38,6 @@ def bench_kv_scaling(config: str = typer.Option(..., "--config")):
     _bench_kv_scaling(config)
 
 
-@app.command(name="bench.kv_scaling")
-def bench_kv_scaling_dot(config: str = typer.Option(..., "--config")):
-    _bench_kv_scaling(config)
-
-
-@app.command(name="bench_kv_scaling")
-def bench_kv_scaling_underscore(config: str = typer.Option(..., "--config")):
-    _bench_kv_scaling(config)
-
-
 def _bench_throughput(config: str):
     cfg = _load(config).data
     results = [r.__dict__ for r in run_throughput(cfg)]
@@ -56,16 +46,6 @@ def _bench_throughput(config: str):
 
 @app.command()
 def bench_throughput(config: str = typer.Option(..., "--config")):
-    _bench_throughput(config)
-
-
-@app.command(name="bench.throughput")
-def bench_throughput_dot(config: str = typer.Option(..., "--config")):
-    _bench_throughput(config)
-
-
-@app.command(name="bench_throughput")
-def bench_throughput_underscore(config: str = typer.Option(..., "--config")):
     _bench_throughput(config)
 
 
@@ -80,18 +60,11 @@ def bench_sweep(config: str = typer.Option(..., "--config")):
     _bench_sweep(config)
 
 
-@app.command(name="bench.sweep")
-def bench_sweep_dot(config: str = typer.Option(..., "--config")):
-    _bench_sweep(config)
-
-
-@app.command(name="bench_sweep")
-def bench_sweep_underscore(config: str = typer.Option(..., "--config")):
-    _bench_sweep(config)
-
-
 @app.command()
-def plot(what: str, config: str):
+def plot(
+    what: str,
+    config: str = typer.Option(..., "--config"),
+):
     cfg = _load(config).data
     out_dir = Path(cfg.get("output_dir", "results/figures"))
     out_dir.mkdir(parents=True, exist_ok=True)

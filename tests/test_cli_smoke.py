@@ -9,7 +9,7 @@ def test_cli_smoke():
         sys.executable,
         "-m",
         "kvbench.cli",
-        "bench_kv_scaling",
+        "bench-kv-scaling",
         "--config",
         "configs/bench/kv_scaling.yaml",
     ]

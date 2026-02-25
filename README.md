@@ -47,10 +47,10 @@ make bench-smoke
 ## CLI
 
 ```bash
-python -m kvbench.cli bench.kv_scaling --config configs/bench/kv_scaling.yaml
-python -m kvbench.cli bench.throughput --config configs/bench/throughput.yaml
-python -m kvbench.cli bench.sweep --config configs/bench/compression_sweep.yaml
-python -m kvbench.cli plot all --config configs/runs/paper_defaults.yaml
+python -m kvbench.cli bench-kv-scaling --config configs/bench/kv_scaling.yaml
+python -m kvbench.cli bench-throughput --config configs/bench/throughput.yaml
+python -m kvbench.cli bench-sweep --config configs/bench/compression_sweep.yaml
+python -m kvbench.cli plot kv --config configs/runs/paper_defaults.yaml
 ```
 
 ## Data and environment

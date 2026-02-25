@@ -16,7 +16,7 @@ typecheck:
 	$(PYTHON) -m mypy src
 
 test:
-	$(PYTHON) -m pytest
+	PYTHONPATH=src $(PYTHON) -m pytest
 
 bench-smoke:
 	$(PYTHON) -m kvbench.cli bench.kv_scaling --config configs/bench/kv_scaling.yaml --max-batches 1 --batch-size 2 --seq-lens 128

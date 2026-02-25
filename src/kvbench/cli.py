@@ -18,7 +18,7 @@ from kvbench.plotting import (
     fig_latency_breakdown,
     fig_throughput,
 )
-from kvbench.utils import setup_logger
+from kvbench.logging import setup_logger
 
 app = typer.Typer()
 
@@ -34,12 +34,17 @@ def _bench_kv_scaling(config: str):
 
 
 @app.command()
-def bench_kv_scaling(config: str):
+def bench_kv_scaling(config: str = typer.Option(..., "--config")):
     _bench_kv_scaling(config)
 
 
 @app.command(name="bench.kv_scaling")
-def bench_kv_scaling_dot(config: str):
+def bench_kv_scaling_dot(config: str = typer.Option(..., "--config")):
+    _bench_kv_scaling(config)
+
+
+@app.command(name="bench_kv_scaling")
+def bench_kv_scaling_underscore(config: str = typer.Option(..., "--config")):
     _bench_kv_scaling(config)
 
 
@@ -50,12 +55,17 @@ def _bench_throughput(config: str):
 
 
 @app.command()
-def bench_throughput(config: str):
+def bench_throughput(config: str = typer.Option(..., "--config")):
     _bench_throughput(config)
 
 
 @app.command(name="bench.throughput")
-def bench_throughput_dot(config: str):
+def bench_throughput_dot(config: str = typer.Option(..., "--config")):
+    _bench_throughput(config)
+
+
+@app.command(name="bench_throughput")
+def bench_throughput_underscore(config: str = typer.Option(..., "--config")):
     _bench_throughput(config)
 
 
@@ -66,12 +76,17 @@ def _bench_sweep(config: str):
 
 
 @app.command()
-def bench_sweep(config: str):
+def bench_sweep(config: str = typer.Option(..., "--config")):
     _bench_sweep(config)
 
 
 @app.command(name="bench.sweep")
-def bench_sweep_dot(config: str):
+def bench_sweep_dot(config: str = typer.Option(..., "--config")):
+    _bench_sweep(config)
+
+
+@app.command(name="bench_sweep")
+def bench_sweep_underscore(config: str = typer.Option(..., "--config")):
     _bench_sweep(config)
 
 

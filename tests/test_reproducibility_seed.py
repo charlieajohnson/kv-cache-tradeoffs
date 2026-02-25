@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from kvbench.utils.seeding import set_seed
 import torch
+
+from kvbench.utils.seeding import set_seed
 
 
 def test_deterministic_seed():

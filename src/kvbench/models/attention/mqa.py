@@ -1,12 +1,18 @@
 from __future__ import annotations
 
 import torch
-from torch import nn
 import torch.nn.functional as F
+from torch import nn
 
 
 class MQA(nn.Module):
-    def __init__(self, d_model: int, n_heads: int, n_kv_heads: int | None = None, dropout: float = 0.0):
+    def __init__(
+        self,
+        d_model: int,
+        n_heads: int,
+        n_kv_heads: int | None = None,
+        dropout: float = 0.0,
+    ):
         super().__init__()
         self.n_heads = n_heads
         self.kv_heads = 1

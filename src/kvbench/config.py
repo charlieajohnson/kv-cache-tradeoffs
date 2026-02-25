@@ -3,17 +3,17 @@ from __future__ import annotations
 import copy
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 
 import yaml
 
 
 @dataclass
 class ExperimentConfig:
-    data: Dict[str, Any]
+    data: dict[str, Any]
 
     @classmethod
-    def from_file(cls, path: str | Path) -> "ExperimentConfig":
+    def from_file(cls, path: str | Path) -> ExperimentConfig:
         path = Path(path)
         with path.open("r", encoding="utf-8") as f:
             data = yaml.safe_load(f) or {}
@@ -29,8 +29,8 @@ class ExperimentConfig:
             node = node[key]
         return node
 
-    def merge(self, updates: Dict[str, Any]) -> "ExperimentConfig":
-        def _merge(left: Dict[str, Any], right: Dict[str, Any]) -> Dict[str, Any]:
+    def merge(self, updates: dict[str, Any]) -> ExperimentConfig:
+        def _merge(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
             out = copy.deepcopy(left)
             for k, v in right.items():
                 if isinstance(v, dict) and isinstance(out.get(k), dict):

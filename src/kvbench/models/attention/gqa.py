@@ -1,12 +1,18 @@
 from __future__ import annotations
 
 import torch
-from torch import nn
 import torch.nn.functional as F
+from torch import nn
 
 
 class GQA(nn.Module):
-    def __init__(self, d_model: int, n_heads: int, n_kv_heads: int | None = None, dropout: float = 0.0):
+    def __init__(
+        self,
+        d_model: int,
+        n_heads: int,
+        n_kv_heads: int | None = None,
+        dropout: float = 0.0,
+    ):
         super().__init__()
         if n_kv_heads is None:
             n_kv_heads = max(1, n_heads // 2)

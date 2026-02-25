@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Dict, List
 
 
 @dataclass
@@ -11,8 +10,8 @@ class ThroughputResult:
     tokens_per_sec: float
 
 
-def run_throughput(config: Dict) -> List[ThroughputResult]:
-    out: List[ThroughputResult] = []
+def run_throughput(config: dict) -> list[ThroughputResult]:
+    out: list[ThroughputResult] = []
     variants = config.get("attention_variants", ["mha"])
     seq_lens = config.get("seq_lens", [128, 256, 512])
     for attn in variants:

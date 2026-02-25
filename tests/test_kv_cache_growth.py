@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from kvbench.utils.memory import estimate_kv_cache_bytes
-import torch
 
 
 def test_kv_cache_growth_linear_l():

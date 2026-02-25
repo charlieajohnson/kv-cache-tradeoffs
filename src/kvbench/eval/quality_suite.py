@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from .perplexity import perplexity
 from .next_token_acc import next_token_accuracy
+from .perplexity import perplexity
 
 
 def run_quality_suite(logits, targets):

@@ -13,4 +13,4 @@ jobs:
         with:
           python-version: "3.10"
       - run: pip install ruff
-      - run: ruff check src tests
+      - run: ruff check --fix src tests

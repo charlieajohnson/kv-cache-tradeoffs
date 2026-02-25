@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 from pathlib import Path
-import pandas as pd
+
 import matplotlib.pyplot as plt
+import pandas as pd
 
 
 def fig_throughput(results, out_path: str | Path) -> None:

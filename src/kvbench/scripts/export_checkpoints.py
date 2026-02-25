@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from kvbench.models import SmallGPT, DecoderOnlyConfig
+from kvbench.models import DecoderOnlyConfig, SmallGPT
 from kvbench.models.checkpoints import save_checkpoint
 
 

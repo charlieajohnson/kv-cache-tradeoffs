@@ -1,5 +1,5 @@
-from .long_repeat import LongRepeatDataset
 from .arithmetic_carry import ArithmeticCarryDataset
 from .high_entropy import HighEntropyDataset
+from .long_repeat import LongRepeatDataset
 
-__all__ = ["LongRepeatDataset", "ArithmeticCarryDataset", "HighEntropyDataset"]
+__all__ = ["ArithmeticCarryDataset", "HighEntropyDataset", "LongRepeatDataset"]

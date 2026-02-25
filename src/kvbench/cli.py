@@ -2,15 +2,21 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+
 import typer
 
+from kvbench.bench import (
+    run_compression_sweep,
+    run_kv_scaling,
+    run_latency_breakdown,
+    run_throughput,
+)
 from kvbench.config import ExperimentConfig
-from kvbench.bench import run_kv_scaling, run_throughput, run_latency_breakdown, run_compression_sweep
 from kvbench.plotting import (
-    fig_kv_memory,
-    fig_throughput,
     fig_compression_threshold,
+    fig_kv_memory,
     fig_latency_breakdown,
+    fig_throughput,
 )
 from kvbench.utils import setup_logger
 

@@ -1,7 +1,7 @@
+from .gqa import GQA
 from .kv_cache import KVCacheState
 from .mha import MHA
 from .mqa import MQA
-from .gqa import GQA
 
 
 def get_attention_class(name: str):
@@ -14,4 +14,4 @@ def get_attention_class(name: str):
         return GQA
     raise ValueError(f"unknown attention variant: {name}")
 
-__all__ = ["KVCacheState", "MHA", "MQA", "GQA", "get_attention_class"]
+__all__ = ["GQA", "MHA", "MQA", "KVCacheState", "get_attention_class"]

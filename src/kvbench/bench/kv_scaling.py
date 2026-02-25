@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Dict, List
 
 
 @dataclass
@@ -11,8 +10,8 @@ class KVScalingResult:
     kv_mib: float
 
 
-def run_kv_scaling(config: Dict, max_batches: int = 1) -> List[KVScalingResult]:
-    out: List[KVScalingResult] = []
+def run_kv_scaling(config: dict, max_batches: int = 1) -> list[KVScalingResult]:
+    out: list[KVScalingResult] = []
     variants = config.get("attention_variants", ["mha"])
     seq_lens = config.get("seq_lens", [128, 256, 512])
     for attn in variants:

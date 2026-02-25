@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass
+from collections.abc import Generator
 from contextlib import contextmanager
-from typing import Generator, Optional
+from dataclasses import dataclass
 
 
 @dataclass
 class Timer:
     elapsed_ms: float = 0.0
-    _start: Optional[float] = None
+    _start: float | None = None
 
-    def __enter__(self) -> "Timer":
+    def __enter__(self) -> Timer:
         self._start = time.perf_counter()
         return self
 

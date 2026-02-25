@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 class DummyTokenizer:
     pad_id = 0
     eos_id = 1

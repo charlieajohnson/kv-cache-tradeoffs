@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import torch
 
-from kvbench.models.attention import MHA, GQA, MQA
+from kvbench.models.attention import GQA, MHA, MQA
 
 
 def _run_shape(attn_cls):
